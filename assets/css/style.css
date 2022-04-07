@@ -4,8 +4,34 @@
     box-sizing: border-box;
 }
 
+body{
+   background-color: hsl(60deg 17% 95%);
+}
+
+img{
+    width: 100%;
+    max-width: 100%;
+}
+
 .our_team{
     text-align: center;
     margin-top: 2rem;
+    padding: 1rem;
+}
+
+.our_team .col .card{
+    background-color: rgb(255, 255, 255);
+    border: none;
+    
+}
+
+.col > img{
+    border-radius: 1rem;
+}
+
+.col p:nth-child(2){
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 

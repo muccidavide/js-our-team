@@ -61,9 +61,21 @@ for (let i = 0; i < team.length; i++) {
     const workerProfile = team[i];
     console.log(`---- worker n°${i + 1} ----`);
     /// creo elemento Dom e aggiungo classe col e appendo a .workers_cards
+
+    let workerElement = document.createElement('div')
+    workerElement.classList.add("col")
+    workersBoxElement.append(workerElement)
+
+
+
+
     let workerCardElement = document.createElement('div')
-    workerCardElement.classList.add("col", `${i}_worker`)
-    workersBoxElement.append(workerCardElement)
+    workerCardElement.classList.add("col", `${i}_worker`, "card")
+    workerElement.append(workerCardElement)
+
+    // raggruppo tutto in delle card
+
+    
 
     // ciclo all'interno dell'oggetto
 
@@ -72,10 +84,16 @@ for (let i = 0; i < team.length; i++) {
 
         //console.log(workerCardElement);
         console.log(workerCaratteristic);
+        //console.log(key);
         // seleziono nodo Dom attraveso classe e aggiungo caratteristiche
-        workerCardElement.insertAdjacentHTML("beforeend",`<p>${workerCaratteristic}</p>`)
 
+        if (key !== "image") {
+            workerCardElement.insertAdjacentHTML("beforeend",`<p>${workerCaratteristic}</p>`)
             
+        } else {
+            workerCardElement.insertAdjacentHTML("afterbegin",`<img src="./assets/img/${workerCaratteristic}" >`)
+        }
+        
     }
     
 }
