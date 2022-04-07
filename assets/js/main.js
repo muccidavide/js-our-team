@@ -15,7 +15,7 @@ organizzare i singoli membri in card/schede
 
 /// membri del team
 
-const team = [
+const team = [      
     {
       name: 'Wayne Barnett',
       role: 'Founder & CEO',
@@ -46,21 +46,39 @@ const team = [
       role: 'Graphic Designer',
       image: 'barbara-ramos-graphic-designer.jpg',
     },
-  ];
+];
 
   //stampare su console le informazioni di nome, ruolo e la stringa della foto
   // for in
 
+let workersBoxElement = document.querySelector('.worker_cards');
+
+
+
+// ciclo all'interno dell'Array
+
 for (let i = 0; i < team.length; i++) {
     const workerProfile = team[i];
     console.log(`---- worker n°${i + 1} ----`);
+    /// creo elemento Dom e aggiungo classe col e appendo a .workers_cards
+    let workerCardElement = document.createElement('div')
+    workerCardElement.classList.add("col", `${i}_worker`)
+    workersBoxElement.append(workerCardElement)
+
+    // ciclo all'interno dell'oggetto
 
     for (const key in workerProfile) {
- 
-            const workerCaratteristic = workerProfile[key];
+        const workerCaratteristic = workerProfile[key];
+
+        //console.log(workerCardElement);
+        console.log(workerCaratteristic);
+        // seleziono nodo Dom attraveso classe e aggiungo caratteristiche
+        workerCardElement.insertAdjacentHTML("beforeend",`<p>${workerCaratteristic}</p>`)
+
             
-            
-            console.log(workerCaratteristic);
     }
     
 }
+
+// stampare le stesse informazioni su DOM sottoforma di stringhe
+
