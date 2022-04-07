@@ -70,7 +70,7 @@ for (let i = 0; i < team.length; i++) {
 
 
     let workerCardElement = document.createElement('div')
-    workerCardElement.classList.add("col", `${i}_worker`, "card")
+    workerCardElement.classList.add(`${i}_worker`, "card")
     workerElement.append(workerCardElement)
 
     // raggruppo tutto in delle card
@@ -99,4 +99,37 @@ for (let i = 0; i < team.length; i++) {
 }
 
 // stampare le stesse informazioni su DOM sottoforma di stringhe
+
+// sezioe form
+
+
+let firstNameElement = document.getElementById('first_name');
+let roleElement = document.getElementById('role');
+let imageElement = document.getElementById('image_input');
+let submitElement = document.getElementById('submit_btn');
+let resetElement = document.getElementById('reset_btn');
+
+submitElement.addEventListener('click', function (event) {
+    event.preventDefault()
+
+  let newMember = {
+    name: firstNameElement.value,
+    role: roleElement.value,
+    image: imageElement.value,
+  }
+
+  team.push(newMember)
+  console.log(team);
+
+})
+
+resetElement.addEventListener('click', function (event) {
+  event.preventDefault()
+
+  firstNameElement.value = ""
+  roleElement.value = ""
+  imageElement.value = ""
+
+})
+
 

@@ -11,6 +11,7 @@ body{
 img{
     width: 100%;
     max-width: 100%;
+    margin: auto;
 }
 
 .our_team{
@@ -20,12 +21,21 @@ img{
 }
 
 .our_team .col .card{
-    background-color: rgb(255, 255, 255);
+    background-color:  rgba(255, 255, 255, 0.70);
+    padding: 30px;
+    border-radius: 1rem;
     border: none;
     
 }
 
-.col > img{
+.our_team .col .card:hover{
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1px 1px 8px rgb(238, 228, 228);
+
+    
+}
+
+.col img{
     border-radius: 1rem;
 }
 
