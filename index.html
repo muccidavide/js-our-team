@@ -41,19 +41,19 @@
         <section class="add_new_worker container p-5  text-center">
             <h2>Add New Member</h2>
 
-            <form  class="w-50 mt-5 m-auto text-start">
+            <form method="post" action=""  class="w-50 mt-5 m-auto text-start">
                 
                 <div class="mb-3">
                     <label for="" class="form-label">First Name:</label>
-                    <input type="text" class="form-control" name="first_name" id="first_name" aria-describedby="helpId" placeholder="Paolo Rossi">
+                    <input required type="text" class="form-control" name="first_name" id="first_name" aria-describedby="helpId" placeholder="Paolo Rossi">
                   </div>
                   <div class="mb-3">
                       <label for="" class="form-label">Role:</label>
-                      <input type="text" class="form-control" name="role" id="role" aria-describedby="helpId" placeholder="Web Developer">
+                      <input required type="text" class="form-control" name="role" id="role" aria-describedby="helpId" placeholder="Web Developer">
                   </div>
                   <div class="mb-3">
                       <label for="" class="form-label">Image</label>
-                      <input type="text" class="form-control" name="image_input" id="image_input" aria-describedby="helpId" placeholder="paolo_rossi_webdeveloper.jpg">
+                      <input required type="text" class="form-control" name="image_input" id="image_input" aria-describedby="helpId" placeholder="paolo_rossi_webdeveloper.jpg">
                   </div>
                   <button type="click" id="submit_btn" class="btn btn-light">Submit</button>
                   <button type="click" id="reset_btn" class="btn btn-light">Reset</button>

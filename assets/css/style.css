@@ -25,14 +25,15 @@ img{
     padding: 30px;
     border-radius: 1rem;
     border: none;
+    transition: transform 500ms;
     
 }
 
 .our_team .col .card:hover{
     background-color: rgb(255, 255, 255);
     box-shadow: 1px 1px 8px rgb(238, 228, 228);
-
-    
+    transform: scale(1.05);
+  
 }
 
 .col img{

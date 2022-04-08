@@ -56,8 +56,49 @@ let workersBoxElement = document.querySelector('.worker_cards');
 
 
 // ciclo all'interno dell'Array
+generateCards(team)
 
-for (let i = 0; i < team.length; i++) {
+// stampare le stesse informazioni su DOM sottoforma di stringhe
+
+// sezioe form
+
+
+let firstNameElement = document.getElementById('first_name');
+let roleElement = document.getElementById('role');
+let imageElement = document.getElementById('image_input');
+let submitElement = document.getElementById('submit_btn');
+let resetElement = document.getElementById('reset_btn');
+
+submitElement.addEventListener('click', function (event) {
+    event.preventDefault()
+
+  let newMember = {
+    name: firstNameElement.value,
+    role: roleElement.value,
+    image: imageElement.value,
+  }
+
+  if (newMember.name !== "" && newMember.role !== "" && newMember.image !== "" )team.push(newMember)
+  console.log(team);
+
+  // rigenerare Dom
+  workersBoxElement.innerHTML= "";
+  generateCards(team)
+
+
+})
+
+resetElement.addEventListener('click', function (event) {
+  event.preventDefault()
+
+  firstNameElement.value = ""
+  roleElement.value = ""
+  imageElement.value = ""
+
+})
+
+function generateCards(team) {
+  for (let i = 0; i < team.length; i++) {
     const workerProfile = team[i];
     console.log(`---- worker n°${i + 1} ----`);
     /// creo elemento Dom e aggiungo classe col e appendo a .workers_cards
@@ -97,39 +138,6 @@ for (let i = 0; i < team.length; i++) {
     }
     
 }
-
-// stampare le stesse informazioni su DOM sottoforma di stringhe
-
-// sezioe form
-
-
-let firstNameElement = document.getElementById('first_name');
-let roleElement = document.getElementById('role');
-let imageElement = document.getElementById('image_input');
-let submitElement = document.getElementById('submit_btn');
-let resetElement = document.getElementById('reset_btn');
-
-submitElement.addEventListener('click', function (event) {
-    event.preventDefault()
-
-  let newMember = {
-    name: firstNameElement.value,
-    role: roleElement.value,
-    image: imageElement.value,
-  }
-
-  team.push(newMember)
-  console.log(team);
-
-})
-
-resetElement.addEventListener('click', function (event) {
-  event.preventDefault()
-
-  firstNameElement.value = ""
-  roleElement.value = ""
-  imageElement.value = ""
-
-})
+}
 
 
